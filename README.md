@@ -2,6 +2,8 @@
 
 This is a **terminal-style** widget for iOS, built using **Scriptable**. It provides real-time system information in a command-line aesthetic, mimicking a terminal prompt.
 
+![Alt Text](./Image.jpg)
+
 ## ✨ Features
 - 📱 **Device Name**: Displays the name of your iPhone.
 - ⚙️ **Operating System**: Shows the current iOS version.
