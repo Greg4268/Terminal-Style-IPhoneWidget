@@ -1,3 +1,4 @@
+
 async function createWidget() {
     let widget = new ListWidget();
 
@@ -9,10 +10,15 @@ async function createWidget() {
 
     widget.addSpacer(5);
 
+    let lineBreak = widget.addText("----------------------------");
+    lineBreak.textColor = new Color("#FFFFFF"); // white
+
+    widget.addSpacer(5);
+
     // device name 
     let deviceName = Device.name();
     let deviceNameText = widget.addText(`📱 Device Name: ${deviceName}`);
-    deviceNameText.textColor = new Color("#00FF00");
+    deviceNameText.textColor = new Color("#FAF531"); // yellow 
     deviceNameText.font = Font.regularSystemFont(12);
     
     widget.addSpacer(5);
@@ -21,7 +27,7 @@ async function createWidget() {
     let deviceOS = Device.systemName();
     let deviceVersion = Device.systemVersion();
     let deviceOSText = widget.addText(`⚙️ Operating System: ${deviceOS} ${deviceVersion}`);
-    deviceOSText.textColor = new Color("#00FF00");
+    deviceOSText.textColor = new Color("#fa31e7"); // magenta
     deviceOSText.font = Font.regularSystemFont(12);
     
     widget.addSpacer(5);
@@ -29,32 +35,22 @@ async function createWidget() {
     // battery level 
     let batteryLevel = Math.floor(Device.batteryLevel() * 100);
     let batteryText = widget.addText(`🔋 Battery: ${batteryLevel}%`);
-    batteryText.textColor = new Color("#00FF00");
+    batteryText.textColor = new Color("#3174fa");
     batteryText.font = Font.regularSystemFont(12);
-    // wifi network 
-//     let wifiName = Network.wifiSSID() || "Note Connected";
-//     let wifiText = widget.addText(`📶 WiFi: ${wifiName}`)
-//     wifiText.textColor = new Color("#FFFFFF");
-//     wifiText.font = Font.regularSystemFont(12);
     
     widget.addSpacer(5);
     
     // device ip
     let ip = await getIPAddress();
     let ipText = widget.addText(`🌐 IP: ${ip}`)
-    ipText.textColor = new Color("#00FF00");
+    ipText.textColor = new Color("#9f31fa"); // purple 
     ipText.font = Font.regularSystemFont(12);
-    // free storage - there is currently no function to get this 
-    // let freeStorage = Device.GetStorage();
-    // let storageText = widget.addText(`Available Storage: ${freeStorage}`);
-    // storageText.textColor = new Color("#FFFFFF");
-    // storageText.font = Font.regularSystemFont(12);
 
     widget.addSpacer(5);
 
     // time & date 
     let dateText = widget.addText(`🕒 Time: ${new Date().toLocaleTimeString()}`);
-    dateText.textColor = new Color("#00FF00");
+    dateText.textColor = new Color("#31fadd"); // cyan
     dateText.font = Font.mediumSystemFont(12);
 
     return widget;
